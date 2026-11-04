@@ -25,12 +25,15 @@ dependencies = [
 ]
 
 [build-system]
-requires = ["setuptools>=69"]
-build-backend = "setuptools.build_meta"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
-[tool.setuptools]
-py-modules = [
-    "pendulum_env", "real_env", "reward", "symmetry", "sysid_core",
-    "pendulum_geometry", "run_config", "async_control", "disturbance",
-    "balance_metrics", "lowlevel_client"
+[tool.hatch.build.targets.wheel]
+include = [
+    "pendulum_env.py", "real_env.py", "reward.py", "symmetry.py",
+    "sysid_core.py", "pendulum_geometry.py", "run_config.py",
+    "async_control.py", "disturbance.py", "balance_metrics.py",
+    "lowlevel_client.py",
+    "model.urdf",
+    "sysid_params_rig1.json", "sysid_params_rig2.json",
 ]

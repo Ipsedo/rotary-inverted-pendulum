@@ -28,3 +28,14 @@ dependencies = [
 # The modules here are flat scripts run from this directory
 # (`uv run python train_sac.py …`), not an installable package.
 package = false
+
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+py-modules = [
+    "pendulum_env", "real_env", "reward", "symmetry", "sysid_core",
+    "pendulum_geometry", "run_config", "async_control", "disturbance",
+    "balance_metrics", "lowlevel_client"
+]

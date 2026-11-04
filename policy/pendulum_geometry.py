@@ -25,7 +25,12 @@ from pathlib import Path
 # Repo layout:
 #   <repo>/policy/pendulum_geometry.py
 #   <repo>/model/model.urdf
-URDF_PATH = Path(__file__).resolve().parents[1] / "model" / "model.urdf"
+_HERE = Path(__file__).resolve().parent
+URDF_PATH = next(
+    p
+    for p in (_HERE / "model.urdf", _HERE.parent / "model" / "model.urdf")
+    if p.exists()
+)
 
 
 def _load_pendulum_geometry(urdf_path: Path) -> tuple[float, float, float]:

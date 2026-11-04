@@ -24,11 +24,6 @@ dependencies = [
     "trimesh",
 ]
 
-[tool.uv]
-# The modules here are flat scripts run from this directory
-# (`uv run python train_sac.py …`), not an installable package.
-package = false
-
 [build-system]
 requires = ["setuptools>=69"]
 build-backend = "setuptools.build_meta"
